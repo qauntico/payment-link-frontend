@@ -1,0 +1,80 @@
+.pagination {
+  color: #111827;
+}
+
+/* Pagination links and buttons - force dark text */
+.pagination a,
+.pagination button {
+  color: #374151 !important;
+}
+
+.pagination a span,
+.pagination button span {
+  color: #374151 !important;
+}
+
+/* Active page link */
+.pagination a[aria-current="page"],
+.pagination button[aria-current="page"] {
+  background-color: #eff6ff !important;
+  border-color: #2563eb !important;
+  color: #2563eb !important;
+}
+
+.pagination a[aria-current="page"] span,
+.pagination button[aria-current="page"] span {
+  color: #2563eb !important;
+}
+
+/* Hover states */
+.pagination a:hover:not([aria-current="page"]),
+.pagination button:hover:not([aria-current="page"]):not(:disabled) {
+  background-color: #f3f4f6 !important;
+  color: #111827 !important;
+}
+
+.pagination a:hover:not([aria-current="page"]) span,
+.pagination button:hover:not([aria-current="page"]):not(:disabled) span {
+  color: #111827 !important;
+}
+
+/* Disabled states */
+.pagination a.disabled,
+.pagination button:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  color: #9ca3af !important;
+}
+
+.pagination a.disabled span,
+.pagination button:disabled span {
+  color: #9ca3af !important;
+}
+
+/* Ellipsis */
+.pagination span[aria-hidden] {
+  color: #6b7280 !important;
+}
+
+/* Ensure text is visible in all pagination items */
+.pagination li,
+.pagination li *,
+.pagination ul,
+.pagination ul * {
+  color: #374151 !important;
+}
+
+/* Target all text content directly */
+.pagination * {
+  color: inherit;
+}
+
+/* Specific overrides for icon colors */
+.pagination svg {
+  color: #374151 !important;
+}
+
+.pagination a[aria-current="page"] svg,
+.pagination button[aria-current="page"] svg {
+  color: #2563eb !important;
+}

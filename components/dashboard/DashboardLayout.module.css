@@ -1,0 +1,29 @@
+.dashboardContainer {
+  display: flex;
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+.mainContent {
+  flex: 1;
+  margin-left: 0px;
+  transition: margin-left 0.3s ease;
+  padding: 2rem;
+}
+
+/* Mobile styles */
+@media (max-width: 1023px) {
+  .mainContent {
+    margin-left: 0;
+    padding: 1rem;
+    padding-top: 4rem; /* Space for mobile menu button */
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .mainContent {
+    margin-left: 150px;
+    padding-top: 2rem;
+  }
+}

@@ -1,0 +1,67 @@
+.modalContent {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.modalTitle {
+  color: #111827 !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+}
+
+.modalDescription {
+  color: #6b7280 !important;
+  font-size: 0.875rem !important;
+}
+
+/* Cancel button (outline) */
+.cancelButton {
+  background-color: white !important;
+  color: #374151 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background-color: #f3f4f6 !important;
+  color: #111827 !important;
+  border-color: #9ca3af !important;
+}
+
+/* Confirm button (default) */
+.confirmButton {
+  background-color: #2563eb !important;
+  color: white !important;
+  border: 1px solid #2563eb !important;
+}
+
+.confirmButton:hover:not(:disabled) {
+  background-color: #1d4ed8 !important;
+  color: white !important;
+}
+
+/* Destructive button (Block/Unblock) */
+.destructiveButton {
+  background-color: #dc2626 !important;
+  color: white !important;
+  border: 1px solid #dc2626 !important;
+}
+
+.destructiveButton:hover:not(:disabled) {
+  background-color: #b91c1c !important;
+  color: white !important;
+}
+
+/* Disabled buttons */
+.modalContent button:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+/* Target Radix UI text elements specifically */
+.modalContent [data-radix-alert-dialog-title] {
+  color: #111827 !important;
+}
+
+.modalContent [data-radix-alert-dialog-description] {
+  color: #6b7280 !important;
+}

@@ -1,0 +1,26 @@
+.adminContainer {
+  display: flex;
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+.mainContent {
+  flex: 1;
+  margin-left: 0;
+  padding: 2rem;
+  padding-top: 4rem;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  .mainContent {
+    margin-left: 280px;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .mainContent {
+    padding-top: 4rem;
+  }
+}

@@ -1,0 +1,229 @@
+.container {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 2rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.formGroup input {
+  background: #f9fafb;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Select component styling - ensure visibility */
+.selectTrigger {
+  background: #f9fafb !important;
+  color: #374151 !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.selectTrigger:hover {
+  background: #f3f4f6 !important;
+}
+
+.selectTrigger span,
+.selectTrigger [data-radix-select-value],
+.selectTrigger * {
+  color: #374151 !important;
+}
+
+.selectContent {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  color: #374151 !important;
+}
+
+.selectItem,
+.selectItem span,
+.selectItem * {
+  color: #374151 !important;
+}
+
+.selectItem:hover,
+.selectItem[data-highlighted] {
+  background: #f3f4f6 !important;
+  color: #111827 !important;
+}
+
+/* Additional global selectors for Radix UI */
+.formGroup button[data-radix-select-trigger],
+.formGroup [data-radix-select-trigger] {
+  background: #f9fafb !important;
+  color: #374151 !important;
+}
+
+.formGroup button[data-radix-select-trigger] span,
+.formGroup [data-radix-select-trigger] span,
+.formGroup [data-radix-select-value] {
+  color: #374151 !important;
+}
+
+.formGroup [data-radix-select-content] {
+  background: white !important;
+  color: #374151 !important;
+}
+
+.formGroup [data-radix-select-item] {
+  color: #374151 !important;
+}
+
+.formGroup [data-radix-select-item]:hover,
+.formGroup [data-radix-select-item][data-highlighted] {
+  background: #f3f4f6 !important;
+  color: #111827 !important;
+}
+
+.readOnlyInput {
+  background: #f3f4f6 !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.errorText {
+  color: #dc2626;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: 0.5rem;
+  background: #111827;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+.submitButton:hover {
+  background: #1f2937;
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonLoader {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingContainer,
+.errorContainer {
+  text-align: center;
+  color: #6b7280;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: .75rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+  padding: 1rem 1rem;
+  display: flex;
+  box-shadow: 0 1px 3px #0000001a;
+  margin-bottom: 10px;
+}
+
+.loader {
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .formWrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formWrapper {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
