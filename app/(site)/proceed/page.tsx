@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { usePaymentStore } from "@/stores/paymentStore";
 import { initiatePayment, InitiatePaymentRequest } from "@/lib/api/payments";
@@ -22,7 +22,7 @@ function ProceedPaymentContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const sessionId = searchParams.get("sessionId");
-  const { productData, paymentSessionId, setPaymentId, setError, error: storeError } = usePaymentStore();
+  const { productData, setPaymentId, setError, error: storeError } = usePaymentStore();
 
   const [formData, setFormData] = useState({
     paymentMode: "MOMO",
@@ -147,7 +147,7 @@ function ProceedPaymentContent() {
 
       const response = await initiatePayment(paymentData);
       console.log("Initiate payment response:", response);
-      // Store payment ID and redirect to waiting page (replace history to prevent back navigation)
+     
       setPaymentId(response.id);
       router.replace(`/waiting?paymentId=${response.id}`);
     } catch (err) {
@@ -326,6 +326,22 @@ function ProceedPaymentContent() {
   );
 }
 
+function ProceedPaymentFallback() {
+  return (
+    <div className={styles.container}>
+      <div className={styles.formWrapper}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>Loading...</h1>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ProceedPaymentPage() {
-  return <ProceedPaymentContent />;
+  return (
+    <Suspense fallback={<ProceedPaymentFallback />}>
+      <ProceedPaymentContent />
+    </Suspense>
+  );
 }

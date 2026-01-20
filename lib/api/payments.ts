@@ -134,3 +134,13 @@ export const getPaymentStatus = async (
   );
   return response.data;
 };
+
+export interface PaymentStatsResponse {
+  total_completed_transactions: number;
+  amount_earn: string;
+}
+
+export const getPaymentStats = async (): Promise<PaymentStatsResponse> => {
+  const response = await api.get<PaymentStatsResponse>('/payments/stats');
+  return response.data;
+};

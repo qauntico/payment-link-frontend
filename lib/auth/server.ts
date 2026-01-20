@@ -17,11 +17,14 @@ export async function getServerUser(): Promise<User | null> {
     }
 
     // Get backend URL
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || process.env.BACKEND_URL || '';
+    const backendUrl = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_BACKEND_URL;
     
     if (!backendUrl) {
+      console.log('backendUrl', backendUrl);
+      console.error("INTERNAL_API_URL is not configured");
       return null;
     }
+    console.log('backendUrl', backendUrl);
 
     // Fetch user profile from backend
     const response = await fetch(`${backendUrl}/users/profile`, {

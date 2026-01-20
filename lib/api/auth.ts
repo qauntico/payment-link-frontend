@@ -39,7 +39,7 @@ export interface SignupResponse {
 }
 
 const getBackendUrl = () => {
-  // In Next.js, client-side code can only access NEXT_PUBLIC_ prefixed env vars
+ 
   // For client-side API calls, we need NEXT_PUBLIC_BACKEND_URL
   if (typeof window !== "undefined") {
     return process.env.NEXT_PUBLIC_BACKEND_URL || "";
@@ -48,7 +48,7 @@ const getBackendUrl = () => {
   return process.env.NEXT_PUBLIC_BACKEND_URL || process.env.BACKEND_URL || "";
 };
 
-// Login uses fetch directly (not axios) as per requirements
+// Login uses fetch directly 
 export const login = async (
   credentials: LoginRequest
 ): Promise<LoginResponse> => {
@@ -76,7 +76,7 @@ export const login = async (
   return response.json();
 };
 
-// Signup uses fetch directly (not axios) as per requirements
+// Signup uses fetch directly 
 export const signup = async (
   data: SignupRequest
 ): Promise<SignupResponse> => {
@@ -104,7 +104,7 @@ export const signup = async (
   return response.json();
 };
 
-// Use axios client for all other API calls
+
 export const getUserProfile = async (): Promise<User> => {
   const response = await api.get<User>('/users/profile');
   return response.data;

@@ -6,6 +6,7 @@ import { Copy, Check, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Product } from "@/lib/api/products";
 import styles from "./ProductCard.module.css";
+import Image from "next/image";
 
 interface ProductCardProps {
   product: Product;
@@ -47,7 +48,9 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer} onClick={handleNavigate}>
-        <img
+        <Image
+          width={100}
+          height={100}
           src={product.image}
           alt={product.title}
           className={styles.image}

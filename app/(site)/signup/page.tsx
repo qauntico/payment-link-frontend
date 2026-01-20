@@ -53,7 +53,7 @@ export default function SignUpPage() {
     setIsLoading(true);
 
     try {
-      // Prepare signup data (supportEmail is optional)
+      // Prepare signup data 
       const signupData = {
         email: formData.email,
         password: formData.password,

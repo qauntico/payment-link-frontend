@@ -271,8 +271,7 @@ export default function CreateProductPage() {
         description={`Your product has been created. Payment link: ${paymentLink}`}
         viewProductsText="View Products"
         onViewProducts={() => {
-          // Will be linked later as per user request
-          console.log("View products clicked");
+          router.push("/products");
         }}
       />
     </div>

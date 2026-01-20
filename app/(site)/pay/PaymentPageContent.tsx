@@ -8,6 +8,7 @@ import { usePaymentStore } from "@/stores/paymentStore";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import styles from "./page.module.css";
+import Image from "next/image";
 
 interface PaymentPageContentProps {
   productId?: string;
@@ -157,7 +158,9 @@ export default function PaymentPageContent({
       <div className={styles.content}>
         <div className={styles.productSection}>
           <div className={styles.imageContainer}>
-            <img
+            <Image
+              width={100}
+              height={100}
               src={product.image}
               alt={product.title}
               className={styles.image}

@@ -13,13 +13,12 @@ export async function POST(request: NextRequest) {
 
     const response = NextResponse.json({ success: true });
 
-    // Set http-only cookie (no expiration means session cookie)
+    // Set http-only cookie 
     response.cookies.set('access_token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
       path: '/',
-      // No maxAge or expires means session cookie (deleted when browser closes)
     });
 
     return response;

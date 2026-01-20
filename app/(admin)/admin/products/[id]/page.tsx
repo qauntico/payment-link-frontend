@@ -2,7 +2,7 @@
 
 import { Suspense, useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { getAdminProductTransactions, updateAdminProductStatus } from "@/lib/api/admin";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -13,9 +13,9 @@ import { AxiosError } from "axios";
 
 import styles from "./page.module.css";
 import AdminTransactionsTable from "@/components/admin/AdminTransactionsTable";
+import Image from "next/image";
 
 function ProductDetailContent({ productId }: { productId: string }) {
-  const router = useRouter();
   const queryClient = useQueryClient();
   const [isToggling, setIsToggling] = useState(false);
 
@@ -117,7 +117,15 @@ function ProductDetailContent({ productId }: { productId: string }) {
       <div className={styles.productSection}>
         <div className={styles.productGrid}>
           <div className={styles.imageContainer}>
-            <img src={product.image} alt={product.title} className={styles.image} />
+            <Image
+              width={100}
+              height={100}
+              quality={80}
+              loading="eager"
+              src={product.image}
+              alt={product.title}
+              className={styles.image}
+            />
           </div>
 
           <div className={styles.productInfo}>

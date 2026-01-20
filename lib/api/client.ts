@@ -17,7 +17,7 @@ const api = axios.create({
 // Add request interceptor to include auth token
 api.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    // Get token from localStorage (client-side only)
+    // Get token from localStorage 
     if (typeof window !== 'undefined') {
       const token = localStorage.getItem('access_token');
       
@@ -26,8 +26,7 @@ api.interceptors.request.use(
       }
     }
     
-    // If data is FormData, let axios set Content-Type automatically (with boundary)
-    // Don't override Content-Type for FormData requests
+    // If data is FormData, let axios set Content-Type automatically 
     if (config.data instanceof FormData && config.headers) {
       delete config.headers['Content-Type'];
     }

@@ -39,14 +39,16 @@ export default function SuccessModal({
     <AlertDialog open={isOpen} onOpenChange={onClose}>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>{title}</AlertDialogTitle>
-          <AlertDialogDescription>{description}</AlertDialogDescription>
+          <AlertDialogTitle className="text-black">{title}</AlertDialogTitle>
+          <AlertDialogDescription className="text-black">
+            {description}
+          </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <Button variant="outline" onClick={onClose}>
+          <Button variant="outline" onClick={onClose} className="text-black">
             Close
           </Button>
-          <AlertDialogAction onClick={handleViewProducts}>
+          <AlertDialogAction onClick={handleViewProducts} className="text-black">
             {viewProductsText}
           </AlertDialogAction>
         </AlertDialogFooter>

@@ -12,6 +12,7 @@ import { toast } from "sonner";
 import { AxiosError } from "axios";
 import styles from "./page.module.css";
 import PaymentsTable from "../../../../components/products/PaymentsTable";
+import Image from "next/image";
 
 function ProductDetailContent({ id }: { id: string }) {
   const queryClient = useQueryClient();
@@ -100,7 +101,9 @@ function ProductDetailContent({ id }: { id: string }) {
     <div className={styles.container}>
       <div className={styles.productSection}>
         <div className={styles.imageContainer}>
-          <img
+          <Image
+            width={100}
+            height={100}
             src={product.image}
             alt={product.title}
             className={styles.image}
